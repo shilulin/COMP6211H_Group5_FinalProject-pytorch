@@ -11,8 +11,8 @@
 
 - Clone this repo:
 ```bash
-git clone https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-cd pytorch-CycleGAN-and-pix2pix
+git clone https://github.com/shilulin/COMP6211H_Group5_FinalProject-pytorch.git
+cd COMP6211H_Group5_FinalProject-pytorch
 ```
 
 - Install [PyTorch](http://pytorch.org) and 0.4+ and other dependencies (e.g., torchvision, [visdom](https://github.com/facebookresearch/visdom) and [dominate](https://github.com/Knio/dominate)).
@@ -26,7 +26,6 @@ cd pytorch-CycleGAN-and-pix2pix
 
 - Train a model:
 ```bash
-#!./scripts/train_cyclegan.sh
 python train.py --dataroot ./datasets/your_own_dataset --name your_model_name --model cycle_gan 
 ```
 To see more intermediate results, check out `./checkpoints/your_model_name/web/index.html`.
@@ -34,15 +33,18 @@ To see more intermediate results, check out `./checkpoints/your_model_name/web/i
 
 - Test the model:
 ```bash
-#!./scripts/test_cyclegan.sh
 python test.py --dataroot ./datasets/your_own_dataset --name your_model_name --model cycle_gan
 ```
 - The test results will be saved to a html file here: `./results/your_model_name/latest_test/index.html`.
 
+- Model evaluation: (have to modify your inference images path)
+```bash
+python SSIM_cal.py
+```
 
 ## [Code structure](docs/overview.md)
 To help users better understand and use our code, we briefly overview the functionality and implementation of each package and each module.
 
 
 ## Acknowledgments
-Our code is mainly inspired by [cycleGAN and pix2pix in PyTorch](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and TransUNet(https://github.com/Beckschen/TransUNet).
+Our code is mainly based on [cycleGAN and pix2pix in PyTorch](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and TransUNet(https://github.com/Beckschen/TransUNet).
